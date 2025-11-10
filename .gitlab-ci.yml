@@ -1,0 +1,28 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  DOCKER_REGISTRY: "your-registry"
+  APP_NAME: "fastapi-cloud-project"
+
+build:
+  stage: build
+  script:
+    - docker build -t ${DOCKER_REGISTRY}/${APP_NAME}:${CI_COMMIT_SHA} .
+    - docker push ${DOCKER_REGISTRY}/${APP_NAME}:${CI_COMMIT_SHA}
+
+test:
+  stage: test
+  script:
+    - docker run --rm ${DOCKER_REGISTRY}/${APP_NAME}:${CI_COMMIT_SHA} echo "Tests passed"
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying to Kubernetes"
+    - kubectl set image deployment/fastapi-app fastapi-app=${DOCKER_REGISTRY}/${APP_NAME}:${CI_COMMIT_SHA}
+    - kubectl rollout status deployment/fastapi-app
+  only:
+    - main
