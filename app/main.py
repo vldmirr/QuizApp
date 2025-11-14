@@ -9,4 +9,4 @@ def greet():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("hello:app", reload=True)
+    uvicorn.run("main:app", reload=True)
