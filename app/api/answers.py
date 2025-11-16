@@ -4,8 +4,8 @@ from sqlalchemy.orm import Session
 
 from app.db import get_db
 from app.models.schemas import AnswerCreate, AnswerResponse
-from app.service import answers as serviceA
-from app.service import questions as serviceQ
+from app.services import answers_service as serviceA
+from app.services import questions_service as serviceQ
 
 router = APIRouter()
 

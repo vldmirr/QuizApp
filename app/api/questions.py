@@ -4,7 +4,7 @@ from typing import List
 
 from app.db import get_db
 from app.models.schemas import QuestionCreate, QuestionResponse, QuestionWithAnswers
-from app.service import questions as serviceQ
+from app.services import questions_service as serviceQ
 
 
 router = APIRouter(prefix="/questions")
