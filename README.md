@@ -93,6 +93,11 @@ docker-compose run --rm web alembic revision --autogenerate -m "init"
 docker-compose run --rm web alembic upgrade head
 ```
 
+### 4. Проведение тестов:
+```bash
+docker-compose exec web pytest -v
+```
+
 ## 📡 API конечные точки 
 
 ### Вопросы 
