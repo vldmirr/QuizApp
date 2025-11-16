@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List
 
-from app.db_connect import get_db
+from app.db import get_db
 from app.models.schemas import QuestionCreate, QuestionResponse, QuestionWithAnswers
 from app.service import questions as crud_questions
 from app.service import answers as crud_answers

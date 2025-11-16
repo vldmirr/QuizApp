@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.db_connect import engine
+from app.db import engine
 from app.models.models import Base
 from app.api import questions, answers
 
