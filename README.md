@@ -38,7 +38,7 @@ project/
 └── requirements.txt              # файл для установки всех пакетор и зависимостей
 ```
 
-## 🛠️ Базовый технический стек: 
+## 🛠️ Технический стек: 
 - **Язык:** Python 3.13.2
 - **Фрэймворк:** FastApi 0.104.1
 - **СУБД:** PostgreSQL 17
@@ -90,7 +90,10 @@ docker-compose run --rm web alembic revision --autogenerate -m "init"
 
 ### 3. Применяем миграции
 ```bash
-docker-compose run --rm web alembic upgrade head
+docker-compose run --rm web alembic upgrade 
+
+#Предварительная проверка созданных таблиц
+docker-compose exec db psql -U postgres -d quizapp_db -c "\dt"
 ```
 
 ### 4. Проведение тестов:
