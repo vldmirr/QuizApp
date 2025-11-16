@@ -26,10 +26,10 @@ logger = logging.getLogger(__name__)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Создание таблиц при запуске
-    logger.info("Creating database tables...")
-    Base.metadata.create_all(bind=engine)
-    logger.info("Database tables created successfully")
+    logger.info("started")
     yield
+    logger.info("shutdown")
+    
 
 app = FastAPI(
     title="Q&A API Service",
