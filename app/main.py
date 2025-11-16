@@ -1,5 +1,6 @@
 import logging
 import time
+import os
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -8,7 +9,8 @@ from app.db import engine
 from app.models.models import Base
 from app.api import questions, answers
 
-
+log_dir = "logs"
+os.makedirs(log_dir, exist_ok=True)
 
 # Настройка логирования
 logging.basicConfig(
