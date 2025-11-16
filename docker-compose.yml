@@ -1,3 +1,4 @@
+
 services:
   web:
     build: .
@@ -17,19 +18,18 @@ services:
         max-file: "3"
 
   db:
-    image: postgres:latest
+    image: postgres:17 
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=qna_db
+      - POSTGRES_DB=quizapp_db
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
     ports:
       - "5432:5432"
-    restart: always
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 10s
+      interval: 5s
       timeout: 5s
       retries: 5
 
