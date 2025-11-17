@@ -50,6 +50,12 @@ project/
 - **Логгирование:** стандартная библиотека (Python)
 - **конфигурация:** python-dotenv
 
+## Установка:
+```bash
+git clone https://github.com/vldmirr/QuizApp
+cd QuizApp
+```
+
 ## ⚙️Конфигурация:
 Для конфигурации проекта используется файл `.env` в проекте есть готовый файл в качестве примера `.env.example`:
 ```bash
@@ -73,11 +79,9 @@ LOG_LEVEL=INFO
 
 DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
 ```
-## ⚡Установка и эксплуатация:
+## ⚡Эксплуатация:
 ### 1. поднимаем все необходимые контейнеры
 ```bash
-git clone https://github.com/vldmirr/QuizApp
-cd QuizApp
 docker-compose up -d
 ```
 Сервисы:
