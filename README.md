@@ -76,6 +76,8 @@ DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}
 ## ⚡Установка и эксплуатация:
 ### 1. поднимаем все необходимые контейнеры
 ```bash
+git clone https://github.com/vldmirr/QuizApp
+cd QuizApp
 docker-compose up -d
 ```
 Сервисы:
