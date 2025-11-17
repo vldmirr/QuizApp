@@ -79,7 +79,7 @@ LOG_LEVEL=INFO
 
 DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
 ```
-## ⚡Эксплуатация:
+## ⚡Запуску:
 ### 1. поднимаем все необходимые контейнеры
 ```bash
 docker-compose up -d
